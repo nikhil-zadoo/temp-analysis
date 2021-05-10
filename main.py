@@ -1,9 +1,9 @@
 from collections import Counter
 import docx2txt
 
-plain_text = docx2txt.process("kashmiri.docx")
-print(plain_text)
 
-print("Splitting")
+to_lower = lambda x: x.lower()
+plain_text = docx2txt.process("kashmiri.docx")
 list_of_words = plain_text.split()
-print(Counter(list_of_words))
+list_of_words_lower = list(map(to_lower, list_of_words))
+print(Counter(list_of_words_lower))
