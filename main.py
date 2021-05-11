@@ -7,7 +7,7 @@ list_of_words = plain_text.split()
 #print(Counter(list_of_words))
 counter_list_of_words = Counter(list_of_words)
 elements = counter_list_of_words.items()
-# for a, b in elements:
+# for a, b in sorted(elements, key=lambda x: x[1], reverse=True):
 #     print(a)
 #     print(b)
 
@@ -20,7 +20,7 @@ cell2 = table.cell(0, 1)
 cell2.text = 'Frequency'
 
 #Iterate over collection elements and append to table craeted
-for word, frequency in elements:
+for word, frequency in sorted(elements, key=lambda x: x[1], reverse=True):
     cell = table.add_row().cells
     cell[0].text = str(word)
     cell[1].text = str(frequency)
