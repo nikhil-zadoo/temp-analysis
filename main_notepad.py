@@ -10,7 +10,7 @@ elements = counter_list_of_words.items()
 #     print(a)
 #     print(b)
 
-with open('results.txt', 'w') as fd:
+with open('results.txt', 'w', encoding='utf-8') as fd:
     fd.write("WORD: FREQUENCY\n")
     for word, frequency in sorted(elements, key=lambda x: x[1], reverse=True):
         fd.write(f"{word}: {str(frequency)}\n")
